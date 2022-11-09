@@ -1,5 +1,8 @@
+import Topbar from "./components/topbar/Topbar";
+import Home from "./pages/home/Home";
+
 function App() {
-  return <div>Hello World</div>;
+  return <Topbar />;
 }
 
 export default App;
