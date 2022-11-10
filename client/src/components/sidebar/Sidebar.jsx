@@ -53,6 +53,90 @@ export default function Sidebar() {
             <span className="sidebarListItemText">Courses</span>
           </li>
         </ul>
+        <button className="sidebarButton">Show More</button>
+        <hr className="sidebarHr" />
+        <ul className="sidebarFriendList">
+          <li className="sidebarFriend">
+            <img
+              className="sidebarFriendImg"
+              src="/assets/person/2.jpeg"
+              alt=""
+            />
+            <span className="sidebarFriendName"> Calvin Park</span>
+          </li>
+          <li className="sidebarFriend">
+            <img
+              className="sidebarFriendImg"
+              src="/assets/person/2.jpeg"
+              alt=""
+            />
+            <span className="sidebarFriendName"> Calvin Park</span>
+          </li>
+          <li className="sidebarFriend">
+            <img
+              className="sidebarFriendImg"
+              src="/assets/person/2.jpeg"
+              alt=""
+            />
+            <span className="sidebarFriendName"> Calvin Park</span>
+          </li>
+          <li className="sidebarFriend">
+            <img
+              className="sidebarFriendImg"
+              src="/assets/person/2.jpeg"
+              alt=""
+            />
+            <span className="sidebarFriendName"> Calvin Park</span>
+          </li>
+          <li className="sidebarFriend">
+            <img
+              className="sidebarFriendImg"
+              src="/assets/person/2.jpeg"
+              alt=""
+            />
+            <span className="sidebarFriendName"> Calvin Park</span>
+          </li>
+          <li className="sidebarFriend">
+            <img
+              className="sidebarFriendImg"
+              src="/assets/person/2.jpeg"
+              alt=""
+            />
+            <span className="sidebarFriendName"> Calvin Park</span>
+          </li>
+          <li className="sidebarFriend">
+            <img
+              className="sidebarFriendImg"
+              src="/assets/person/2.jpeg"
+              alt=""
+            />
+            <span className="sidebarFriendName"> Calvin Park</span>
+          </li>
+          <li className="sidebarFriend">
+            <img
+              className="sidebarFriendImg"
+              src="/assets/person/2.jpeg"
+              alt=""
+            />
+            <span className="sidebarFriendName"> Calvin Park</span>
+          </li>
+          <li className="sidebarFriend">
+            <img
+              className="sidebarFriendImg"
+              src="/assets/person/2.jpeg"
+              alt=""
+            />
+            <span className="sidebarFriendName"> Calvin Park</span>
+          </li>
+          <li className="sidebarFriend">
+            <img
+              className="sidebarFriendImg"
+              src="/assets/person/2.jpeg"
+              alt=""
+            />
+            <span className="sidebarFriendName"> Calvin Park</span>
+          </li>
+        </ul>
       </div>
     </div>
   );
