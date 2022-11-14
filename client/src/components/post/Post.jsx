@@ -11,7 +11,7 @@ export default function Post({ post }) {
           <div className="postTopLeft">
             <img
               className="postProfileImg"
-              src="/assets/person/1.jpeg"
+              src={Users.filter((u) => u.id === post.userId)[0].profilePicture}
               alt=""
             />
             <span className="postUsername">
