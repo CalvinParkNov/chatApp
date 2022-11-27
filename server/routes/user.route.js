@@ -1,8 +1,8 @@
-const express = require("express");
-const router = express.Router();
-const UserController = require("../controllers/user.controller");
-const asyncWrapper = require("../middleware/async");
+import Express from "express";
+const router = Express.Router();
 
-router.route("/user").get(asyncWrapper(UserController.test));
+router.get("/test", (req, res) => {
+  res.send("working so far");
+});
 
-module.exports = router;
+export default router;
