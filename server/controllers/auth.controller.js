@@ -1,36 +1,33 @@
 import { db } from "../connect.js";
-import bcryptjs from "bcryptjs";
-import { hasUncaughtExceptionCaptureCallback } from "process";
+import bcrypt from "bcryptjs";
+
 export const register = (req, res) => {
-  return;
-  //check user if exists
+  //CHECK USER IF EXISTS
 
-  const query = "SELECT FROM USER WHERE USER NAME =?";
+  const q = "SELECT * FROM USER WHERE username = ?";
 
-  db.query(query, [req.body.username], (err, data) => {
-    if (err) {
-      return res.status(500).json(err);
-    }
-    if (data.length) {
-      return res.status(409).json("User already exists!");
-    }
-  });
-  //create a new user
-  //hash the password
-  const salt = bcryptjs.genSalt();
-  const hashedPassword = bcryptjs.hashSync(req.body.password, salt);
+  db.query(q, [req.body.username], (err, data) => {
+    if (err) return res.status(500).json(err);
+    if (data.length) return res.status(409).json("User already exists!");
+    //CREATE A NEW USER
+    //Hash the password
+    const salt = bcrypt.genSaltSync(10);
+    const hashedPassword = bcrypt.hashSync(req.body.password, salt);
 
-  const q =
-    "INSERT INTO user (`username`, `email`, `password`, `name`) VALUE(?)";
+    const q =
+      "INSERT INTO USER (`username`,`email`,`password`,`name`) VALUE (?)";
 
-  const { username, email, name } = req.body;
-  const values = [username, email, hashedPassword, name];
+    const values = [
+      req.body.username,
+      req.body.email,
+      hashedPassword,
+      req.body.name,
+    ];
 
-  db.query(q, [values], (err, data) => {
-    if (err) {
-      return res.status(500).json(err);
-    }
-    return res.status(200).json("User has been created");
+    db.query(q, [values], (err, data) => {
+      if (err) return res.status(500).json(err);
+      return res.status(200).json("User has been created.");
+    });
   });
 };
 
