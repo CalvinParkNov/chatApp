@@ -3,8 +3,13 @@ dotenv.config();
 import express from "express";
 const app = express();
 const port = process.env.PORT;
+import cors from "cors";
+import cookieParser from "cookie-parser";
 
+//middlewares
 app.use(express.json());
+app.use(cors());
+app.use(cookieParser());
 
 import authRoutes from "./routes/auth.route.js";
 import userRoute from "./routes/user.route.js";
