@@ -1,3 +1,5 @@
+import * as dotenv from "dotenv";
+dotenv.config();
 import { db } from "../connect.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
@@ -41,7 +43,7 @@ export const login = (req, res) => {
   const q = `SELECT
                 *
              FROM
-                USERS
+                USER
              WHERE
                 USERNAME = ?`;
   db.query(q, [req.body.username], (err, data) => {
@@ -59,6 +61,15 @@ export const login = (req, res) => {
     if (!checkPassword) {
       return res.status(400).json("Wrong password or username!");
     }
+    const { password, ...others } = data[0];
+
+    const token = jwt.sign({ id: data[0].id }, process.env.SECRET);
+    res
+      .cookie("accessToken", token, {
+        httpOnly: true,
+      })
+      .status(200)
+      .json(others);
   });
 };
 
