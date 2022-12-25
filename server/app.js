@@ -16,7 +16,6 @@ import userRoute from "./routes/user.route.js";
 import postRoutes from "./routes/posts.route.js";
 import commentRoutes from "./routes/comment.route.js";
 import likeRoutes from "./routes/likes.route.js";
-import cookieParser from "cookie-parser";
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoute);
